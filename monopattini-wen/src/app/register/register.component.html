@@ -3,17 +3,17 @@
       <h2>Crea un Account</h2>
       <form>
           <div class="text-center">
-              <img src="https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png" class="img-circle avatar" alt="Avatar">
+              <img src="https://image.flaticon.com/icons/svg/1801/1801421.svg" class="img-circle avatar" alt="Avatar">
           </div>
           <div class="form-group">
-              <input #username2 type="text" class="form-control" placeholder="Username" value="" class="input" class="form-control" maxlength="15" name="username" required/>
-              <input #password2 type="password" class="form-control" placeholder="Password" value="" class="input" class="form-control" name="password" required/>
+              <input #username type="text" class="form-control" placeholder="Username" value="" class="input" class="form-control" maxlength="15" name="username" required/>
+              <input #password type="password" class="form-control" placeholder="Password" value="" class="input" class="form-control" name="password" required/>
           </div>
-          <p class="text-center">{{ok}}</p>
+          <p class="text-center"><font color="green">{{ok}}</font></p>
           <div class="form-group">
-              <input (click)= "onClick2(username2.value,password2.value)"  type="submit" value="Crea" class="btn btn-primary btn-block"/>
+              <input (click)= "onClick(username.value,password.value)"  type="submit" value="Crea" class="btn btn-primary btn-block"/>
           </div>
       </form>
-      <p (click)= "onVedi2()" class="text-center"><a [routerLink]="['/login']">Accedi al tuo Account</a></p>
+      <p (click)= "onVedi()" class="text-center"><a [routerLink]="['/login']">Accedi al tuo Account</a></p>
   </div>
 </div>

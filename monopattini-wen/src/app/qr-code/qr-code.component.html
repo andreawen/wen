@@ -1,11 +1,39 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<div class="text-center">
-	<img class="img" src="https://media.wired.com/photos/5c61ddc4edce4f5f279e64c9/master/w_1920,c_limit/Mi-Electric-Scooter_TA.jpg"  width="80%">
+<div class="text-center" *ngIf=alert>
+  <p *ngFor="let alert of alerts">
+  <ngb-alert [type]="alert.type" (close)="closeA(alert)">{{ alert.message }}</ngb-alert>
+  </p>
+</div>
+<div class="text-center" *ngIf=aa>
+	<img class="img" src="http://www.onlywheel.com/wp-content/uploads/2018/12/2019-04-1733.gif"  width="100%">
   <!--<p>Inserire Qr Code Monopattino </p>
   <input #qr type="file"/>!-->
   <br><br>
-  <input (click)="inizioNoleggio()" style="padding:7px 15px 7px 15px; font-size:15px" #inizio *ngIf="inizio" type="submit" class="btn btn-success" value="Inizia Noleggio"/>
-  <input (click)="fineNoleggio()" style="padding:7px 15px 7px 15px; font-size:15px" #fine *ngIf="fine"  type="submit" class="btn btn-danger" value="Fine Noleggio"/>
-  <br>
-
+  <p>Stato monopattino: <b><h3>{{this.stato}}</h3></b></p>
+  <!--<p *ngIf=f class="text-center">Tempo: <b><h3>{{time}}</h3></b></p>!-->
+  <p *ngIf=e class="text-center"><font color="#e60000">{{err}}</font></p>
+  <input (click)="inizioNoleggio()" [disabled]="Inizio" style="padding:7px 15px 7px 15px; font-size:15px" #inizio *ngIf="inizio" type="submit" class="btn btn-success" value="Inizia Noleggio"/>
+  <input (click)="fineNoleggio()" style="padding:7px 15px 7px 15px; font-size:15px" #fine *ngIf="fine" type="submit" class="btn btn-danger" value="Fine Noleggio"/>
+  <br><br>
+  <input style="padding:7px 13px 7px 13px; font-size:15px" (click)="open()" type="submit" class="btn btn-warning" value="Segnala Guasto"/>
+</div>
+<div *ngIf=bb class="text-center">
+  <img class="img" src="https://img.icons8.com/metro/420/maintenance.png"  width="30%"><br><br>
+  <form>
+    <div *ngIf=alert2>
+      <ngb-alert [dismissible]="false">
+        <strong>Attenzione!</strong> Devi selezionare un'opzione.
+      </ngb-alert>
+    </div>
+    <div>
+      <label>Scegli un'opzione</label>
+      <select [(ngModel)]="selected" name="first" class="selectpicker">
+        <option *ngFor="let o of options">
+            {{o.name}}
+        </option>
+      </select><br><br>
+    </div>
+    <input type="submit" style="padding:7px 20px 7px 20px; font-size:15px" class="btn btn-success" (click)="segnala(guasto)" value="Segnala"/>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    <input type="submit" style="padding:7px 20px 7px 20px; font-size:15px" class="btn btn-danger" (click)="close()" value="Annulla"/>
+  </form>
 </div>

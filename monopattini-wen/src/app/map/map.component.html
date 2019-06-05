@@ -1,13 +1,14 @@
+<app-navbar></app-navbar>
 <agm-map [zoom]="15" [latitude]="lat" [longitude]="lng">
 	<agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="icona">
 		<agm-info-window>
-			<h3>{{this.user}} sei qui!</h3>
+			<h3>{{this.user}}</h3>
         </agm-info-window>
     </agm-marker>
     <agm-marker *ngFor="let data of monoPa" [latitude]="data.lat" [longitude]="data.lng" [iconUrl]="icon" >
-        <agm-info-window [maxWidth]="270">
+        <agm-info-window [maxWidth]="268" (click)="onClick(id)">
             <p>id monopattino: <b><h3>{{data._id}}</h3></b></p>
-            <app-qr-code></app-qr-code>
+            <app-qr-code [id]="data._id" [stato]="data.stato"></app-qr-code>
         </agm-info-window>
     </agm-marker>
 </agm-map>

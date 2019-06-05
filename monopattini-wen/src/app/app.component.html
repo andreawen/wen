@@ -20,22 +20,5 @@
     <router-outlet></router-outlet>
 </div>!-->
 
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <h2>MONO-RENT</h2>
-          <div class="collapse navbar-collapse" id="navbarCollapse8">
-              <div class="navbar-nav">
-                  <a [routerLink]="['/home']" class="nav-item nav-link">Home <img style="max-width:30px;" src="https://image.flaticon.com/icons/png/512/25/25694.png"></a>
-                  <a [routerLink]="['/map']" class="nav-item nav-link">Mappa <img style="max-width:30px;" src="https://png.pngtree.com/svg/20170217/5a47dc4f9e.png"></a>
-              </div>
-              <form class="form-inline ml-auto dropdown">
-                  Benvenuto:{{this.user}}<b></b>&nbsp; &nbsp;&nbsp;<img style="max-width:30px;" src="https://cdn3.iconfinder.com/data/icons/social-messaging-productivity-6/128/profile-male-circle2-512.png">
-                    <div class="dropdown-content">
-                        <!--<a [routerLink]="['/profilo']">Account</a>!-->
-                        <a (click)="logout()">Logout</a>
-                    </div>
-              </form>
-          </div>
-  </nav>
+
   <router-outlet></router-outlet>
-</div>

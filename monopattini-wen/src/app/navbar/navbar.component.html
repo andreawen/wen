@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <h2><b>MONO-RENT</b></h2>
+          <div class="collapse navbar-collapse" id="navbarCollapse8">
+              <div class="navbar-nav">
+                  <a [routerLink]="['/home']" class="nav-item nav-link">Home <img style="max-width:30px;" src="https://image.flaticon.com/icons/png/512/25/25694.png"></a>
+                  <a [routerLink]="['/map']" class="nav-item nav-link">Mappa <img style="max-width:30px;" src="https://png.pngtree.com/svg/20170217/5a47dc4f9e.png"></a>
+              </div>
+              <form class="form-inline ml-auto dropdown">
+                  Benvenuto: <b>{{this.user}}</b>&nbsp; &nbsp;&nbsp;<img style="max-width:40px;" src="https://image.flaticon.com/icons/svg/1801/1801421.svg">
+                    <div class="dropdown-content">
+                        <a [routerLink]="['/profilo']">Account</a>
+                        <a (click)="logout()">Logout</a>
+                    </div>
+              </form>
+          </div>
+  </nav>
+</div>

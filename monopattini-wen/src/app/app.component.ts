@@ -18,11 +18,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  logout():void{
-    this.user="";
-    console.log("logout" + this.user)
-    this.router.navigate(['/login']);
-  }
 
 
 

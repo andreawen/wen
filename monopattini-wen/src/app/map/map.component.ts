@@ -15,6 +15,8 @@ export class MapComponent implements OnInit {
   mono: Observable<Monopattino[]>;
   monoPa: Monopattino[] = [];
   user:string;
+  id:string="";
+  stato:string="";
   constructor(public http: HttpClient) {
     this.findMe();
     this.invioPosizione();
@@ -22,6 +24,12 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onClick(id: HTMLInputElement,stato: HTMLInputElement):Boolean{
+    this.id+=id.value;
+    this.stato+=stato.value;
+    return false;
   }
 
   findMe() {
@@ -53,5 +61,6 @@ export class MapComponent implements OnInit {
       height:60
     }
   }
+
 }
 

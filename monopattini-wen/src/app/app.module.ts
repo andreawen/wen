@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
@@ -14,6 +15,7 @@ import { GuastoComponent } from './guasto/guasto.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { ProfiloComponent } from './profilo/profilo.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ProfiloComponent } from './profilo/profilo.component';
     MapComponent,
     QrCodeComponent,
     GuastoComponent,
-    ProfiloComponent
+    ProfiloComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { ProfiloComponent } from './profilo/profilo.component';
     routing,
     CommonModule,
     FormsModule,
+    NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCzUI8LYmnHPyFrtRT8Q8IEREZfOygUl-U'
     }),

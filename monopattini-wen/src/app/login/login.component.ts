@@ -21,15 +21,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   onClick(username: string, password: string): boolean {
-
-    let dati: Login = new Login();
-    dati.username = username;
-    dati.password = password;
-    console.log(this.wen.length);
-    console.log(dati);
-    this.wen.push(dati);
-    this.Accedi(dati);
-    return false;
+    if(username !== "" && password !==""){
+      let dati: Login = new Login();
+      dati.username = username;
+      dati.password = password;
+      console.log(this.wen.length);
+      console.log(dati);
+      this.wen.push(dati);
+      this.Accedi(dati);
+      return false;
+    }else if(username == "" && password ==""){
+        this.err ="Inserisci username e password"
+    }
   }
     Accedi(dati: Login): void {
     this.http.get<Object>('https://3000-d0e6a422-af39-482f-85ec-554b1e6334c0.ws-eu0.gitpod.io/login/' + dati.username + '/' + dati.password)
@@ -51,6 +54,7 @@ export class LoginComponent implements OnInit {
         console.log(id);
         console.log(username);
         localStorage.setItem('username', username);
+        localStorage.setItem('idUser', id);
       });
   }
 }
